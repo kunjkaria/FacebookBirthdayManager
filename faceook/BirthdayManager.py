@@ -8,14 +8,15 @@ This temporary script file is located here:
 """
 from django.core.management import setup_environ
 from fbday import settings
-
+API_KEY=""
+API_SECRET=""
 setup_environ(settings)
 
 def app():
     from facebook import Facebook
     
     #Get api key and secret key 
-    facebook=Facebook('311914332229300','6d00f81ba71ec7e010a73af942e238de')
+    facebook=Facebook(API_KEY, API_SECRET)
     
     facebook.auth.createToken()
     #Show login window
